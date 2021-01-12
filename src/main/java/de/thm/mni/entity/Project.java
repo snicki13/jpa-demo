@@ -1,4 +1,4 @@
-package de.thm.mni;
+package de.thm.mni.entity;
 
 import lombok.Data;
 

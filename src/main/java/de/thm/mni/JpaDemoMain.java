@@ -1,5 +1,6 @@
 package de.thm.mni;
 
+import de.thm.mni.entity.BusinessUnit;
 import org.apache.derby.drda.NetworkServerControl;
 
 import javax.persistence.EntityManager;
