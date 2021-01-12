@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+    <persistence-unit name="eclipseLink">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>de.thm.mni.BusinessUnit</class>
+        <properties>
+            <property name="eclipselink.target-database" value="org.eclipse.persistence.platform.database.DerbyPlatform"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:derby:memory:eclipseLink;create=true"/>
+            <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
+            <property name="eclipselink.ddl-generation.output-mode" value="database"/>
+            <property name="eclipselink.ddl-generation" value="create-tables"/>
+            <property name="eclipselink.logging.level.sql" value="fine"/>
+            <property name="eclipselink.logging.parameters" value="true"/>
+            <property name="eclipselink.logging.logger" value="de.thm.mni.EclipseLinkLogback"/>
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="hibernate">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>de.thm.mni.BusinessUnit</class>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.DerbyTenSevenDialect"/>
+            <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:derby:memory:hibernate;create=true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
