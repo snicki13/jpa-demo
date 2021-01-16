@@ -6,6 +6,8 @@
     <persistence-unit name="eclipseLink">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <class>de.thm.mni.entity.BusinessUnit</class>
+        <class>de.thm.mni.entity.Employee</class>
+        <class>de.thm.mni.entity.Project</class>
         <properties>
             <property name="eclipselink.target-database" value="org.eclipse.persistence.platform.database.DerbyPlatform"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:derby:memory:eclipseLink;create=true"/>
@@ -13,6 +15,7 @@
             <property name="eclipselink.ddl-generation.output-mode" value="database"/>
             <property name="eclipselink.ddl-generation" value="create-tables"/>
             <property name="eclipselink.logging.level.sql" value="fine"/>
+            <property name="eclipselink.logging.level" value="severe"/>
             <property name="eclipselink.logging.parameters" value="true"/>
             <property name="eclipselink.logging.logger" value="org.eclipse.persistence.logging.slf4j.SLF4JLogger"/>
         </properties>
@@ -20,6 +23,9 @@
     <persistence-unit name="hibernate">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>de.thm.mni.entity.BusinessUnit</class>
+        <class>de.thm.mni.entity.Employee</class>
+        <class>de.thm.mni.entity.Project</class>
+
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.DerbyTenSevenDialect"/>
             <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>

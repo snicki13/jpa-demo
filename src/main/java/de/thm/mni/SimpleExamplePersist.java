@@ -9,7 +9,7 @@ import javax.persistence.Persistence;
 import java.net.InetAddress;
 import java.util.Scanner;
 
-public class JpaDemoMain {
+public class SimpleExamplePersist {
 
     public static void main(String[] args) throws Exception {
         NetworkServerControl server = new NetworkServerControl(InetAddress.getByName("localhost"),1527);
@@ -17,12 +17,7 @@ public class JpaDemoMain {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("eclipseLink");
         EntityManager em = entityManagerFactory.createEntityManager();
-        em.getTransaction().begin();
-        em.persist(new BusinessUnit());
-        new Scanner(System.in).next();
-        em.getTransaction().commit();
-
-
+        em.persist(new BusinessUnit("Human Resources"));
     }
 
 
