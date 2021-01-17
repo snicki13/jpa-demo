@@ -7,7 +7,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.net.InetAddress;
-import java.util.Scanner;
 
 public class SimpleExamplePersist {
 
